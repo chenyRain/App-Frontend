@@ -9,7 +9,10 @@ module.exports = {
   ],
   rules: {
     'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
-    'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off'
+    'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
+    'quotes': [0, 'double'], // 不强制使用胆英豪
+    'space-before-function-paren': 'off', // 不检查方法名后面的是否有空格
+    'semi': 0 // 不检查分号
   },
   parserOptions: {
     parser: 'babel-eslint'
