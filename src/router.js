@@ -9,7 +9,7 @@ export default new Router({
   routes: [
     {
       path: '/',
-      component: () => import('./views/index.vue')
+      component: () => import('./views/login/login.vue')
     }
   ]
 })
