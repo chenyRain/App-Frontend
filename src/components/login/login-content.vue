@@ -19,6 +19,10 @@
     <div class="login-button">
       <van-button class="login-button-1" type="danger">登 录</van-button>
     </div>
+    <div class="login-forget">
+      <a class="forget-pass" href="">忘记密码？</a>
+      <a class="forget-pass register" href="">去注册</a>
+    </div>
   </div>
 </template>
 
@@ -45,6 +49,17 @@ export default {
   width: 100%;
   height: 100%;
   padding-top: 200px;
+
+  .login-forget{
+    display: flex;
+    margin: 0 20px;
+    .forget-pass {
+      color: white;
+    }
+    .register {
+      justify-content: space-between;
+    }
+  }
 
   .login-input-group {
     background-color: transparent;
