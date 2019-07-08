@@ -13,7 +13,8 @@ module.exports = {
     'quotes': [0, 'double'], // 不强制使用胆英豪
     'space-before-function-paren': 'off', // 不检查方法名后面的是否有空格
     'semi': 0, // 不检查分号
-    'import/no-duplicates': 0 // 不检查分号
+    'import/no-duplicates': 0, // 不检查分号
+    'no-unused-vars': 0
   },
   parserOptions: {
     parser: 'babel-eslint'

@@ -6,7 +6,7 @@
         v-model.trim="username"
         placeholder="输入用户名"
         input-align="center"
-        error=true
+        error
         clearable
       />
       <van-field
@@ -14,7 +14,7 @@
         v-model.trim="password"
         placeholder="输入密码"
         input-align="center"
-        error=true
+        error
         clearable
       />
       <van-field
@@ -22,12 +22,12 @@
         v-model.trim="repassword"
         placeholder="再次输入密码"
         input-align="center"
-        error=true
+        error
         clearable
       />
     </van-cell-group>
     <div class="login-button">
-      <van-button class="login-button-1" type="danger">注 册</van-button>
+      <van-button class="login-button-1" type="danger" @click="register">注 册</van-button>
     </div>
     <div class="login-forget">
       <a class="forget-pass" href>忘记密码？</a>
@@ -38,6 +38,7 @@
 
 <script>
 import { Button, Field, CellGroup } from "vant";
+import { inputVerify } from "@/utils/global";
 
 export default {
   components: {
@@ -51,6 +52,20 @@ export default {
       password: "",
       repassword: ""
     };
+  },
+  methods: {
+    register() {
+      if (
+        !inputVerify({
+          username: this.username,
+          password: this.password,
+          repassword: this.repassword
+        })
+      ) {
+        return;
+      }
+      this.$router.push("/");
+    }
   }
 };
 </script>
