@@ -1,23 +1,23 @@
 <template>
-  <div class="login">
-    <login-content />
+  <div class="register">
+    <register-content />
     <common-footer />
   </div>
 </template>
 
 <script>
-import LoginContent from "@/components/login/login-content";
+import RegisterContent from "@/components/login/register-content";
 import CommonFooter from "@/components/common/footer";
 export default {
   components: {
-    LoginContent,
+    RegisterContent,
     CommonFooter
   }
 };
 </script>
 
 <style lang="scss" scoped>
-.login {
+.register {
   width: 100%;
   height: 100%;
   background: url("../../assets/images/login2.jpg");
