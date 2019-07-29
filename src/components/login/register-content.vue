@@ -38,7 +38,7 @@
 
 <script>
 import { Button, Field, CellGroup } from "vant";
-import { inputVerify } from "@/utils/global";
+import { registerInputVerify } from "@/utils/global";
 
 export default {
   components: {
@@ -56,7 +56,7 @@ export default {
   methods: {
     register() {
       if (
-        !inputVerify({
+        !registerInputVerify({
           username: this.username,
           password: this.password,
           repassword: this.repassword

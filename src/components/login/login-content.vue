@@ -22,15 +22,15 @@
       <van-button class="login-button-1" type="danger" @click="login">登 录</van-button>
     </div>
     <div class="login-forget">
-      <a class="forget-pass" href>忘记密码？</a>
+      <a class="forget-pass" href="javascript:;" @click="forgetPassword">忘记密码？</a>
       <a class="forget-pass" href="/register">去注册 ></a>
     </div>
   </div>
 </template>
 
 <script>
-import { Button, Field, CellGroup } from "vant";
-import { inputVerify } from "@/utils/global";
+import { Button, Field, CellGroup, Toast } from "vant";
+import { loginInputVerify } from "@/utils/global";
 
 export default {
   components: {
@@ -45,9 +45,9 @@ export default {
     };
   },
   methods: {
-    login () {
+    login() {
       if (
-        !inputVerify({
+        !loginInputVerify({
           username: this.username,
           password: this.password
         })
@@ -55,7 +55,10 @@ export default {
         return;
       }
 
-      this.$router.push('/');
+      this.$router.push("/");
+    },
+    forgetPassword() {
+      Toast.fail("别找回了，重新注册吧");
     }
   }
 };
